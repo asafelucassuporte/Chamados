@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <title>Gráfico Chamados</title>
+
+  <script>
+    // Função para atualizar a Data
+    function atualizarData() {
+
+      // Exemplo: atualiza o conteúdo exibindo a data e hora atual
+      var dataHoraAtual = new Date().toLocaleString();
+      document.getElementById("dataHora").innerHTML =  dataHoraAtual;
+    }
+
+    // Chama a função atualizarData() a cada segundo (1000 milissegundos)
+    setInterval(atualizarData, 1000);
+  </script>
+
+</head>
+
+<body style="font-family: 'Inria Sans'; background-color: #004170;">
+  
+  <style>
+    body{
+      padding: 0;
+      margin: 0;
+      
+    }
+    .geral{
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .cabecalho{
+      display: flex;
+      width: 100%;
+      height: 30%;
+      color: white;
+      text-align: center;
+      font-size: 35px;
+
+    }
+    .nome{
+      width: 60%;
+      height: 60px;
+      text-align: right;
+      margin: 92px 0 0 0;
+      font-weight: 800;
+
+    }
+    .data{
+      width: 40%;
+      margin: 30px 0 0 0;
+      font-size: 65px;
+      font-weight: 700;
+    }
+    .grade{
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 70%;
+      
+    }
+    .grade-item{
+      width: 20%;
+      height: 464px;
+      text-align: center;
+      font-size: 30px;
+      color: white;
+      text-transform: uppercase;
+      
+    }
+    .grade-item-grafico{
+      width: 60%;
+    }
+    .titulo{
+      margin: 40px 0 0 0;
+
+    }
+    .observacao{
+      margin: 0;
+
+    }
+    .resultado{
+      font-size: 250px;
+      margin: 0;
+      font-family: 'Inria Sans';
+      padding: 0;
+      height: 290px;
+      
+    }
+  </style>
+
+ <div class="geral"> 
+  <div class="cabecalho">
+    <h1 class="nome">Acompanhamento de Chamados - </h1>
+    <div class="data">
+      <p id="dataHora"></p>
+
+      <script>
+        // Obtém a data e hora atual da rede
+        var dataHoraAtual = new Date().toLocaleString();
+
+        // Exibe a data e hora atual na página
+        document.getElementById("dataHora").innerHTML =  dataHoraAtual;
+      </script>
+    </div>
+  </div>
+  <div class="grade">
+      <div class="grade-item" style="background-color: rgb(128, 128, 128);">
+        <h4 class="titulo">Finalizado</h4>
+        <p class="observacao">(hoje)</p>
+        <h5 class="resultado">10</h5>
+      </div>
+
+      <div class="grade-item" style="background-color: rgb(112, 112, 112);">
+        <h4 class="titulo">Finalizado Interno</h4>
+        <p class="observacao">(hoje)</p>
+        <h5 class="resultado">10</h5>
+      </div>
+
+      <div class="grade-item" style="background-color: rgb(83, 83, 83);">
+        <h4 class="titulo">Aberto</h4>
+        <p class="observacao">(hoje)</p>
+        <h5 class="resultado">10</h5>
+      </div>
+
+      <div class="grade-item" style="background-color: rgb(51, 51, 51);">
+        <h4 class="titulo">Chamados</h4>
+        <p class="observacao">(mês)</p>
+        <h5 class="resultado">10</h5>
+      </div>
+
+      <div class="grade-item" style="background-color: black">
+        <h4 class="titulo">Entregas</h4>
+        <p class="observacao">(mês)</p>
+        <h5 class="resultado">10</h5>
+      </div>
+
+      <div class="grade-item" style="background-color: black">
+        <h4 class="titulo">Pendentes</h4>
+        <p class="observacao">48h</p>
+        <h5 class="resultado">10</h5>
+      </div>
+
+      <div class="grade-item" style="background-color: rgb(51, 51, 51);">
+        <h4 class="titulo">Finalizado Interno</h4>
+        <p class="observacao">(mês)</p>
+        <h5 class="resultado">10</h5>
+      </div>
+
+      <div class="grade-item-grafico">
+       
+
+
+      </div>  
+      
+    </div>
+  </div>
+</body>
+</html>
