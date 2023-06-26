@@ -164,11 +164,6 @@
       <div class="grade-item-grafico">
        
         <canvas id="graficoColunas">
-          <style>
-            .chartjs-data-label {
-                color: rgb(255, 0, 0); /* Altere para a cor desejada */
-            }
-          </style>
           <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0/dist/chartjs-plugin-datalabels.min.js"></script>
   
             <script>
@@ -186,28 +181,48 @@
               };
           
               // Opções do gráfico
-              var opcoesGrafico = {
-                  scales: {
-                      y: {                        
-                          beginAtZero: true
-                      }
-                      
-                  },
-                  plugins:{  
-                    datalabels: {
-                    anchor: 'end',
-                    align: 'end',
-                    color: 'White' // Altere para a cor desejada
+            var opcoesGrafico = {
+                scales: {
+                    y: {                        
+                        beginAtZero: true,
+
+                        ticks: {                        
+                          color: 'white', // Define a cor do texto do eixo X
+                          font: {
+                            size: 30 // Define o tamanho da fonte do eixo X
+                          }
+                        },
+                        grid: {
+                            color: '' // Define a cor das linhas do grid do eixo X
+                        }
                     },
-  
-                    legend:{
-                      label:{
-                        color:'red'
+                    
+                    x: {                      
+                      ticks: {                        
+                          color: 'white', // Define a cor do texto do eixo X
+                          font: {
+                            size: 30 // Define o tamanho da fonte do eixo X
+                          }
+                      },
+                      grid: {
+                          color: '' // Define a cor das linhas do grid do eixo X
                       }
-                    }
+                    },
+                },
+
+                plugins:{  
+                  datalabels: {
+                  anchor: 'end',
+                  align: 'end',
+                  color: 'White' // Altere para a cor desejada
+                  },
+
+                  legend: {
+                    display: false // Remove a legenda do gráfico
                   }
-                  
-              };
+                }
+                
+            };
           
               // Criação do gráfico de colunas
               var ctx = document.getElementById('graficoColunas').getContext('2d');
@@ -219,9 +234,7 @@
               });
             </script>
           </canvas>
-
-      </div>  
-      
+      </div>       
     </div>
   </div>
 </body>
