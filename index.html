@@ -13,7 +13,7 @@
     function atualizarData() {
 
       // Exemplo: atualiza o conteúdo exibindo a data e hora atual
-      var dataHoraAtual = new Date().toLocaleString("DD/MM/AAAA - HH:MM:SS");
+      var dataHoraAtual = new Date().toLocaleString();
       document.getElementById("dataHora").innerHTML =  dataHoraAtual;
     }
 
@@ -106,7 +106,7 @@
 
       <script>
         // Obtém a data e hora atual da rede
-        var dataHoraAtual = new Date().toLocaleString();
+        var dataHoraAtual = new Date("DD/MM/AAAA - HH:MM").toLocaleString();
 
         // Exibe a data e hora atual na página
         document.getElementById("dataHora").innerHTML =  dataHoraAtual;
