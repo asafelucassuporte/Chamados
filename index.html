@@ -21,6 +21,8 @@
     setInterval(atualizarData, 1000);
   </script>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body style="font-family: 'Inria Sans'; background-color: #004170;">
@@ -78,10 +80,13 @@
       
     }
     .grade-item-grafico{
-      width: 60%;
+      width: 50%;
+      height: 469px;
+      margin-left: 80px;
     }
     .titulo{
       margin: 40px 0 0 0;
+      font-weight: 900 ;
 
     }
     .observacao{
@@ -158,7 +163,62 @@
 
       <div class="grade-item-grafico">
        
-
+        <canvas id="graficoColunas">
+          <style>
+            .chartjs-data-label {
+                color: rgb(255, 0, 0); /* Altere para a cor desejada */
+            }
+          </style>
+          <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  
+            <script>
+              // Dados do gráfico
+              var dadosGrafico = {
+                  labels: ['Teuto', 'Dislab', 'Natulab', 'Sogamax', 'Americana'],
+                  datasets: [{
+                      label: 'Demanda',
+                      data: [90, 120, 150, 180, 200],
+                      backgroundColor: 'rgba(255, 255, 255)',                 
+                      borderColor: 'rgba(255, 255, 255)',
+                      borderWidth: 3  
+                  }],
+                  
+              };
+          
+              // Opções do gráfico
+              var opcoesGrafico = {
+                  scales: {
+                      y: {                        
+                          beginAtZero: true
+                      }
+                      
+                  },
+                  plugins:{  
+                    datalabels: {
+                    anchor: 'end',
+                    align: 'end',
+                    color: 'White' // Altere para a cor desejada
+                    },
+  
+                    legend:{
+                      label:{
+                        color:'red'
+                      }
+                    }
+                  }
+                  
+              };
+          
+              // Criação do gráfico de colunas
+              var ctx = document.getElementById('graficoColunas').getContext('2d');
+              var grafico = new Chart(ctx, {
+                  type: 'bar',
+                  data: dadosGrafico,
+                  options: opcoesGrafico,
+                  plugins: [ChartDataLabels] // Habilita o uso do plugin
+              });
+            </script>
+          </canvas>
 
       </div>  
       
